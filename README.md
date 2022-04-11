@@ -1,2 +1,2 @@
-# chat-kt-frontend
+# chat-kt-app
 Welcome to our Project
