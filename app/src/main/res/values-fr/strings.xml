@@ -2,4 +2,7 @@
 <resources>
     <string name="welcome_page_message">Bienvenue sur CHATKT</string>
     <string name="welcome_page_next_button">Suivant</string>
+    <string name="welcome_page_username_input">Entrez un pseudonyme...</string>
+    <string name="welcome_page_username_view">Entrez un pseudonyme pour vous enregistrer</string>
+    <string name="welcome_page_connect_button">Se connecter</string>
 </resources>

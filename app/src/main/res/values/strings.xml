@@ -5,4 +5,7 @@
     <string name="welcome_page_message">Welcome to CHATKT</string>
     <string name="welcome_page_next_button">Next</string>
     <string name="welcome_page_content_description" translatable="false">Welcome page Logo</string>
+    <string name="welcome_page_username_input">Enter a username…</string>
+    <string name="welcome_page_username_view">Enter a username to sign up</string>
+    <string name="welcome_page_connect_button">Sign Up</string>
 </resources>
