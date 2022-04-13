@@ -1,4 +1,4 @@
-package com.demo.chatktapp.InscriptionFragment
+package com.demo.chatktapp.inscriptionFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,9 +13,7 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 /**
- * A simple [Fragment] subclass.
- * Use the [UsernameFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * Fragment suivant la page de bienvenue qui prend le nom de d'utilisateur
  */
 class UsernameFragment : Fragment() {
     // TODO: Rename and change types of parameters
