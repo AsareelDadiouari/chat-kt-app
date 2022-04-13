@@ -1,4 +1,4 @@
-package com.demo.chatkt
+package com.demo.chatktapp
 
 import org.junit.Test
 
