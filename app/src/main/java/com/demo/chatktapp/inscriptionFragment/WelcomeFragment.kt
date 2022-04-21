@@ -1,7 +1,7 @@
 package com.demo.chatktapp.inscriptionFragment
 
-import android.content.Context
 import android.os.Bundle
+import android.transition.TransitionInflater
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,8 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.navGraphViewModels
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import com.demo.chatktapp.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -25,8 +25,6 @@ class WelcomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private lateinit var mView: View
-    private lateinit var buttonNext: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +32,9 @@ class WelcomeFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        val inflater = TransitionInflater.from(requireContext())
+        exitTransition = inflater.inflateTransition(R.transition.fade)
     }
 
     override fun onCreateView(
@@ -41,18 +42,19 @@ class WelcomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        mView =  inflater.inflate(R.layout.fragment_welcome, container, false)
-        buttonNext = mView.findViewById(R.id.button_next)
-
-        buttonNext.setOnClickListener {
-            Log.d("WelcomeFragment", "Next FRAGMENT")
-        }
-
-        return mView
+        return inflater.inflate(R.layout.fragment_welcome, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val button = view.findViewById<Button>(R.id.button_next) as Button
+
+        button.setOnClickListener {
+            childFragmentManager.commit {
+                add(R.id.welcomeFragment, UsernameFragment())
+                setReorderingAllowed(true)
+            }
+        }
     }
 
     companion object {
