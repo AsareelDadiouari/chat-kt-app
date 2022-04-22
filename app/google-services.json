@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "723799612433",
+    "firebase_url": "https://chat-app-kt-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "chat-app-kt",
+    "storage_bucket": "chat-app-kt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723799612433:android:f301f371fa6fb16429e5b0",
+        "android_client_info": {
+          "package_name": "com.demo.chatktapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723799612433-9bdl145nh5gq58qc5229felaigmjhcrq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWEC9W_pZaWvynJAiqeitVxPeNeduZrYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723799612433-9bdl145nh5gq58qc5229felaigmjhcrq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
