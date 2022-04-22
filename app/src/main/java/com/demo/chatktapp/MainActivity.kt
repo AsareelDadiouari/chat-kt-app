@@ -15,7 +15,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        FirebaseService.authenticate()
+        if (FirebaseService.currentUser() == null)
+            FirebaseService.authenticate()
 
         setContentView(R.layout.activity_main)
         sharedPreferences = getPreferences(Context.MODE_PRIVATE)
@@ -28,8 +29,7 @@ class MainActivity : AppCompatActivity() {
                     setReorderingAllowed(true)
                 }
             }
-            false -> {
-            }
+            false -> {}
         }
     }
 

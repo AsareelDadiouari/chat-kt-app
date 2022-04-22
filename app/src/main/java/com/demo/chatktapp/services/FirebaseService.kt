@@ -10,6 +10,7 @@ import com.demo.chatktapp.models.Message
 import com.demo.chatktapp.models.Room
 import com.demo.chatktapp.models.User
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 
 const val TAG = "FIREBASESERVICE"
@@ -54,6 +55,11 @@ class FirebaseService : Service() {
         fun authenticate() {
             val auth = FirebaseAuth.getInstance()
             auth.signInAnonymously()
+        }
+
+        fun currentUser(): FirebaseUser? {
+            val auth = FirebaseAuth.getInstance()
+            return auth.currentUser
         }
     }
 
