@@ -1,17 +1,21 @@
 package com.demo.chatktapp
 
+import android.R
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.Toast
+import android.view.Menu
+import android.widget.ActionMenuView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import com.demo.chatktapp.inscriptionFragment.WelcomeFragment
 import com.demo.chatktapp.services.FirebaseService
 import java.util.*
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +33,20 @@ class MainActivity : AppCompatActivity() {
                     setReorderingAllowed(true)
                 }
             }
-            false -> {}
+            false -> {
+                toolbarBuild()
+            }
         }
+    }
+
+    private fun toolbarBuild(){
+        toolbar = findViewById(R.id.main_activity_toolbar)
+        setSupportActionBar(toolbar)
+
+        val searchIconToolbar = findViewById<ActionMenuView>(R.id.action_search)
+        val parameterIconToolbar = findViewById<ActionMenuView>(R.id.action_settings)
+
+        toolbar.inflateMenu(R.menu.toobar_menu)
     }
 
     private fun saveId(){
@@ -40,5 +56,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun isFirstTime(): Boolean {
         return (sharedPreferences.getString("deviceID", null) == null) || (sharedPreferences.getString("username", null) == null)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        // Inflate the menu, this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.toobar_menu, menu)
+        return true
     }
 }

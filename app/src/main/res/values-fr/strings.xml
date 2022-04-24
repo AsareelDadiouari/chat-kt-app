@@ -5,4 +5,8 @@
     <string name="welcome_page_username_input">Entrez un pseudonyme...</string>
     <string name="welcome_page_username_view">Entrez un pseudonyme pour vous enregistrer</string>
     <string name="welcome_page_connect_button">Se connecter</string>
+    <string name="tab_item_messages">Messages</string>
+    <string name="tab_item_contacts">Contacts</string>
+    <string name="action_search">Chercher</string>
+    <string name="action_parameters">Paramètres</string>
 </resources>

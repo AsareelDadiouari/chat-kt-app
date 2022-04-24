@@ -39,7 +39,8 @@
             android:minHeight="48dp"
             android:hint="@string/welcome_page_username_input"
             android:textColor="#000000"
-            android:textColorHint="#FFFFFF" />
+            android:textColorHint="#FFFFFF"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/signUpButton"
