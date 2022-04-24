@@ -52,7 +52,7 @@ class UsernameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         usernameEditText = view.findViewById(R.id.usernameEditText) as EditText
-        usernameTypeChangeListener(view)
+        usernameTypeChangeListener()
         closeKeyBoardOnPressEnter(view)
         registerUser(view)
     }
@@ -72,7 +72,7 @@ class UsernameFragment : Fragment() {
         })
     }
 
-    private fun usernameTypeChangeListener(view: View){
+    private fun usernameTypeChangeListener(){
         usernameEditText.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
@@ -94,7 +94,7 @@ class UsernameFragment : Fragment() {
             FirebaseService.saveFireStore(context, "users", user)
             sharedPreferences!!.edit()?.putString("username", username)?.apply()
 
-            val intent: Intent = Intent(activity, MainActivity::class.java)
+            val intent = Intent(activity, MainActivity::class.java)
             startActivity(intent)
         }
     }

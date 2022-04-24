@@ -1,11 +1,11 @@
 package com.demo.chatktapp
 
-import android.R
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
-import android.widget.ActionMenuView
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import com.demo.chatktapp.inscriptionFragment.WelcomeFragment
@@ -42,11 +42,6 @@ class MainActivity : AppCompatActivity() {
     private fun toolbarBuild(){
         toolbar = findViewById(R.id.main_activity_toolbar)
         setSupportActionBar(toolbar)
-
-        val searchIconToolbar = findViewById<ActionMenuView>(R.id.action_search)
-        val parameterIconToolbar = findViewById<ActionMenuView>(R.id.action_settings)
-
-        toolbar.inflateMenu(R.menu.toobar_menu)
     }
 
     private fun saveId(){
@@ -59,8 +54,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        // Inflate the menu, this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.toobar_menu, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_search -> {
+                Toast.makeText(applicationContext, "Search icon is clicked", Toast.LENGTH_LONG).show()
+            }
+            R.id.action_settings -> {
+                Toast.makeText(applicationContext, "Parameter icon is clicked", Toast.LENGTH_LONG).show()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
