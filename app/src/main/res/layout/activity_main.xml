@@ -35,7 +35,10 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/main_activity_tab_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:tabBackground="@color/white"
+            app:tabSelectedTextColor="@color/teal_700"
+            app:tabTextColor="@color/gray">
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabItem_Messages"

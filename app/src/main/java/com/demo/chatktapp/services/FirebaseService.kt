@@ -5,10 +5,12 @@ import android.content.Context
 import android.content.Intent
 import android.os.IBinder
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.demo.chatktapp.models.Message
 import com.demo.chatktapp.models.Room
 import com.demo.chatktapp.models.User
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
@@ -17,7 +19,7 @@ const val TAG = "FIREBASESERVICE"
 
 class FirebaseService : Service() {
     companion object {
-        fun <T> saveFireStore(context: Context?, collection: String, data: T) {
+        fun <T> saveFireStore(context: Context?, view: View, collection: String, data: T) {
             val firestore = FirebaseFirestore.getInstance()
 
             when (data) {
@@ -25,7 +27,8 @@ class FirebaseService : Service() {
                     firestore.collection(collection).document(data.deviceId).set(data)
                         .addOnSuccessListener {
                             Log.d(TAG, "DocumentSnapshot added with ID: ${data.deviceId}")
-                            Toast.makeText(context, "Welcome, ${data.username}", Toast.LENGTH_LONG).show()
+                            //Toast.makeText(context, "Welcome, ${data.username}", Toast.LENGTH_LONG).show()
+                            Snackbar.make(view, "Hello", Snackbar.LENGTH_SHORT ).show()
                         }
                         .addOnFailureListener { e ->
                             Log.w(TAG, "Error adding document", e)
