@@ -5,4 +5,5 @@ import java.util.*
 data class Room(
     val id: UUID = UUID.randomUUID(),
     var messages: MutableList<Message>,
+    var roomName: String
 ) : Entity()

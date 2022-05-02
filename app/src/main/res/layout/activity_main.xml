@@ -35,23 +35,16 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/main_activity_tab_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:tabBackground="@color/white"
-            app:tabSelectedTextColor="@color/teal_700"
-            app:tabTextColor="@color/gray">
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            app:tabBackground="@color/teal_700"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="#E1E1E1" />
 
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabItem_Messages"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_item_messages" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabItem_Contacts"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_item_contacts" />
-        </com.google.android.material.tabs.TabLayout>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/tab_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

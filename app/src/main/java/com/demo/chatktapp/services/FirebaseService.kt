@@ -6,7 +6,6 @@ import android.content.Intent
 import android.os.IBinder
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import com.demo.chatktapp.models.Message
 import com.demo.chatktapp.models.Room
 import com.demo.chatktapp.models.User
@@ -28,7 +27,7 @@ class FirebaseService : Service() {
                         .addOnSuccessListener {
                             Log.d(TAG, "DocumentSnapshot added with ID: ${data.deviceId}")
                             //Toast.makeText(context, "Welcome, ${data.username}", Toast.LENGTH_LONG).show()
-                            Snackbar.make(view, "Hello", Snackbar.LENGTH_SHORT ).show()
+                            Snackbar.make(view, "Hello", Snackbar.LENGTH_SHORT).show()
                         }
                         .addOnFailureListener { e ->
                             Log.w(TAG, "Error adding document", e)

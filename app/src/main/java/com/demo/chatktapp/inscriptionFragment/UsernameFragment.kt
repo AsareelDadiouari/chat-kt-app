@@ -3,12 +3,10 @@ package com.demo.chatktapp.inscriptionFragment
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.transition.TransitionInflater
-import android.util.Log
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +19,6 @@ import com.demo.chatktapp.MainActivity
 import com.demo.chatktapp.R
 import com.demo.chatktapp.models.User
 import com.demo.chatktapp.services.FirebaseService
-import java.util.*
 
 
 /**
@@ -72,12 +69,14 @@ class UsernameFragment : Fragment() {
         })
     }
 
-    private fun usernameTypeChangeListener(){
-        usernameEditText.addTextChangedListener(object: TextWatcher {
+    private fun usernameTypeChangeListener() {
+        usernameEditText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
+
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
+
             override fun afterTextChanged(p0: Editable?) {
             }
         })
@@ -91,7 +90,7 @@ class UsernameFragment : Fragment() {
             val username = usernameEditText.text.toString()
             val user = User(username, deviceID)
 
-            FirebaseService.saveFireStore(context, view,  "users", user)
+            FirebaseService.saveFireStore(context, view, "users", user)
             sharedPreferences!!.edit()?.putString("username", username)?.apply()
 
             val intent = Intent(activity, MainActivity::class.java)

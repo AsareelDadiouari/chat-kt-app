@@ -27,7 +27,7 @@
         android:textStyle="bold"
         android:gravity="center"
         android:textColor="@color/black"
-        android:padding="30dp"/>
+        android:padding="30dp" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -36,7 +36,7 @@
         android:layout_below="@id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:indeterminateTint="@color/black"/>
+        android:indeterminateTint="@color/black" />
 
     <TextView
         android:id="@+id/textView1"
