@@ -28,4 +28,8 @@
         android:name="com.demo.chatktapp.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
+    <activity
+        android:id="@+id/splashActivity"
+        android:name="com.demo.chatktapp.SplashActivity"
+        android:label="SplashActivity" />
 </navigation>

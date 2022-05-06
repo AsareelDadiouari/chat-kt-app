@@ -90,7 +90,7 @@ class UsernameFragment : Fragment() {
             val username = usernameEditText.text.toString()
             val user = User(username, deviceID)
 
-            FirebaseService.saveFireStore(context, view, "users", user)
+            FirebaseService.saveFireStore(context, requireActivity(), "users", user)
             sharedPreferences!!.edit()?.putString("username", username)?.apply()
 
             val intent = Intent(activity, MainActivity::class.java)

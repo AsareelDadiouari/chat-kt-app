@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
+import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.demo.chatktapp.adapters.ViewPagerAdapter
 import com.demo.chatktapp.inscriptionFragment.WelcomeFragment
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
                 tabViewPager = findViewById(R.id.tab_viewPager)
 
                 tabViewPager.adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
+                tabViewPager.offscreenPageLimit = 2; //Put tabs in memory !important for smoothness
 
                 TabLayoutMediator(tableLayout, tabViewPager) { tab, position ->
                     when (position) {

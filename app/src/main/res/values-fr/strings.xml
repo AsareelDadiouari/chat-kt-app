@@ -9,4 +9,5 @@
     <string name="tab_item_contacts">Contacts</string>
     <string name="action_search">Chercher</string>
     <string name="action_parameters">Paramètres</string>
+    <string name="welcome_string">Bienvenue</string>
 </resources>

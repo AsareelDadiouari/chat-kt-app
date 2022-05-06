@@ -30,18 +30,13 @@ class MessageListFragment : Fragment() {
 
 
         val arr = ArrayList<MessageView>()
-        arr.add(MessageView("", "Asa", "Yo", Calendar.getInstance().time))
-        arr.add(MessageView("", "Asa", "Yo", Calendar.getInstance().time))
-        arr.add(MessageView("", "Asa", "Yo", Calendar.getInstance().time))
-        arr.add(MessageView("", "Asa", "Yo", Calendar.getInstance().time))
-        arr.add(MessageView("", "Asa", "Yo", Calendar.getInstance().time))
-        arr.add(MessageView("", "Asa", "Yo", Calendar.getInstance().time))
-        arr.add(MessageView("", "Asa", "Yo", Calendar.getInstance().time))
-        arr.add(MessageView("", "Asa", "Yo", Calendar.getInstance().time))
+        arr.add(MessageView("", "Asa",
+            "the main body of a book or other piece of writing, as distinct" +
+                    " from other material such as notes, appendices," +
+                    " and illustrations.", Calendar.getInstance().time))
 
         messageList = view.findViewById(R.id.message_list_view)
-        messageList.adapter =
-            MessagesArrayAdapter(requireContext(), R.layout.fragment_message_item, arr)
+        messageList.adapter = MessagesArrayAdapter(requireContext(), R.layout.fragment_message_item, arr)
 
         return view
     }

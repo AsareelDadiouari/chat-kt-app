@@ -6,6 +6,8 @@ import android.content.Intent
 import android.os.IBinder
 import android.util.Log
 import android.view.View
+import androidx.fragment.app.FragmentActivity
+import com.demo.chatktapp.R
 import com.demo.chatktapp.models.Message
 import com.demo.chatktapp.models.Room
 import com.demo.chatktapp.models.User
@@ -18,7 +20,7 @@ const val TAG = "FIREBASESERVICE"
 
 class FirebaseService : Service() {
     companion object {
-        fun <T> saveFireStore(context: Context?, view: View, collection: String, data: T) {
+        fun <T> saveFireStore(context: Context?, fa: FragmentActivity, collection: String, data: T) {
             val firestore = FirebaseFirestore.getInstance()
 
             when (data) {
@@ -27,7 +29,9 @@ class FirebaseService : Service() {
                         .addOnSuccessListener {
                             Log.d(TAG, "DocumentSnapshot added with ID: ${data.deviceId}")
                             //Toast.makeText(context, "Welcome, ${data.username}", Toast.LENGTH_LONG).show()
-                            Snackbar.make(view, "Hello", Snackbar.LENGTH_SHORT).show()
+                            val welcomeText = fa.getString(R.string.welcome_string) + ", " + data.username
+                            Snackbar.make(fa.window.decorView.rootView,
+                                welcomeText, Snackbar.LENGTH_SHORT).show()
                         }
                         .addOnFailureListener { e ->
                             Log.w(TAG, "Error adding document", e)
